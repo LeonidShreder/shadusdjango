@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = [
     '/Users/Leo/PycharmProjects/shadusdjango/templates'
+    '/Users/Leo/PycharmProjects/shadusdjango/article/templates'
 ]
 
 
@@ -124,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    ('static', '/Users/Leo/PycharmProjects/shadusdjango/static'),
+)
