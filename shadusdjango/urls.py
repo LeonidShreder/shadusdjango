@@ -18,11 +18,8 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    # Examples:
-    # url(r'^$', 'mysite.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', admin.site.urls),
-    url(r'^basic/', include('article.urls')),
+    url(r'^basicview/', include('article.urls')),
+    url(r'^auth', include('loginsys.urls')),
     url(r'^', include('article.urls')),
 ]

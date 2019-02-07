@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 TEMPLATE_DIRS = [
     '/Users/Leo/PycharmProjects/shadusdjango/templates'
     '/Users/Leo/PycharmProjects/shadusdjango/article/templates'
+    '/Users/Leo/PycharmProjects/shadusdjango/loginsys/templates'
 ]
 
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    'loginsys',
 ]
 
 MIDDLEWARE = [
