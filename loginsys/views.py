@@ -4,13 +4,12 @@ from django.template.context_processors import csrf
 
 def login(request):
     args = {}
-    args.update(csrf())
     if request.POST:
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            auth.login(request, user)
+            login(request, user)
             return redirect('/')
         else:
             args['login_error'] = 'Пользователь не найден'
@@ -20,7 +19,7 @@ def login(request):
         return render_to_response('login.html', args)
 
 def logout(request):
-    auth.logout(request)
+    logout(request)
     return redirect('/')
 
 def register(request):

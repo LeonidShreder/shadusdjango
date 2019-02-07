@@ -1,6 +1,5 @@
 {% extends 'main.html' %}
 
-{% load crispy_forms_tags %}
 
 {% block login %}
 <div class="card">
@@ -10,8 +9,6 @@
 <form method="post">
 {% csrf_token %}
 <input type="hidden" name="next" value="{{ next }}">
-
-{{ form|crispy }}
 
 <button type="submit" class="btn btn-primary btn-block">Log in</button>
 </form>
