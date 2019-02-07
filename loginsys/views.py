@@ -10,7 +10,7 @@ def login(request):
         password = request.POST.get('password', '')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            auth.login(request, user)
+            login(request, user)
             return redirect('/')
         else:
             args['login_error'] = 'Пользователь не найден'
@@ -20,7 +20,7 @@ def login(request):
         return render_to_response('login.html', args)
 
 def logout(request):
-    auth.logout(request)
+    logout(request)
     return redirect('/')
 
 def register(request):
@@ -31,8 +31,8 @@ def register(request):
         newuser_form = UserCreationForm(request.POST)
         if newuser_form.is_valid():
             newuser_form.save()
-            newuser = auth.authenticate(username=newuser_form.cleaned_data['username'], password=newuser_form.cleaned_data['password2'])
-            auth.login(request, newuser)
+            newuser = authenticate(username=newuser_form.cleaned_data['username'], password=newuser_form.cleaned_data['password2'])
+            login(request, newuser)
             return redirect('/')
         else:
             args['form'] = newuser_form
